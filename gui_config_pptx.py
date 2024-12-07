@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox, PhotoImage
 from pathlib import Path
-from main import main, ExportarNombrePlaceholders as generar_marcadores
+from main import main, configurar_variables, ExportarNombrePlaceholders
 import os
 import json
 
@@ -39,6 +39,12 @@ def seleccionar_ruta(entry_widget, tipo):
             entry_widget.delete(0, tk.END)
             entry_widget.insert(0, carpeta)
 
+def verificar_sobrescritura(archivo):
+    """Verificar si un archivo existe y preguntar si desea sobrescribirlo."""
+    if Path(archivo).exists():
+        return messagebox.askyesno("Advertencia", f"El archivo {archivo} ya existe. ¿Desea sobrescribirlo?")
+    return True
+
 def ejecutar_script(input_pptx, input_excel, output_path, output_file):
     if not input_pptx or not input_excel or not output_path or not output_file:
         messagebox.showerror("Error", "Todos los campos son obligatorios.")
@@ -59,6 +65,11 @@ def ejecutar_script(input_pptx, input_excel, output_path, output_file):
     if not output_file.endswith(".pptx"):
         output_file += ".pptx"
 
+    output_full_path = Path(output_path) / output_file
+
+    if not verificar_sobrescritura(output_full_path):
+        return
+
     guardar_configuracion({
         "input_pptx": input_pptx,
         "input_excel": input_excel,
@@ -67,8 +78,9 @@ def ejecutar_script(input_pptx, input_excel, output_path, output_file):
     })
 
     try:
-        main(input_pptx, input_excel, output_path, output_file)
-        messagebox.showinfo("Éxito", f"Presentación generada correctamente en: {Path(output_path) / output_file}")
+        configurar_variables(input_pptx, input_excel, output_path, output_file)
+        main()
+        messagebox.showinfo("Éxito", f"Presentación generada correctamente en: {output_full_path}")
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
 
@@ -85,14 +97,20 @@ def ejecutar_marcadores(input_pptx, output_path):
         messagebox.showerror("Error", f"La carpeta de salida no existe: {output_path}")
         return
 
+    output_full_path = Path(output_path) / "Marcadores.pptx"
+
+    if not verificar_sobrescritura(output_full_path):
+        return
+
     guardar_configuracion({
         "input_pptx": input_pptx,
         "output_path": output_path
     })
 
     try:
-        generar_marcadores(input_pptx, output_path)
-        messagebox.showinfo("Éxito", f"Marcadores generados correctamente en: {Path(output_path) / 'Marcadores.pptx'}")
+        configurar_variables(input_pptx, None, output_path, "Marcadores.pptx")
+        ExportarNombrePlaceholders(input_pptx, output_path)
+        messagebox.showinfo("Éxito", f"Marcadores generados correctamente en: {output_full_path}")
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
 
@@ -121,7 +139,7 @@ def main_gui():
     output_path_entry.insert(0, config.get("output_path", ""))
     tk.Button(root, text="Seleccionar", command=lambda: seleccionar_ruta(output_path_entry, "folder")).grid(row=2, column=2, padx=10, pady=5)
 
-    tk.Label(root, text="Nombre del Archivo de Salida:").grid(row=3, column=0, padx=10, pady=5, sticky="e")
+    tk.Label(root, text="Nombre del Archivo de Salida: ").grid(row=3, column=0, padx=10, pady=5, sticky="e")
     output_file_entry = tk.Entry(root, width=40)
     output_file_entry.grid(row=3, column=1, padx=10, pady=5, sticky="w")
     output_file_entry.insert(0, config.get("output_file", ""))
@@ -139,15 +157,13 @@ def main_gui():
         play_icon = None
         markers_icon = None
 
+    # Botón Generar Presentación
+    tk.Button(frame_buttons, text=" Generar Presentación", image=play_icon, compound="left", padx=8, pady=8,
+              command=lambda: ejecutar_script(input_pptx_entry.get(), input_excel_entry.get(), output_path_entry.get(), output_file_entry.get())).pack(side="right", padx=5)
 
     # Botón Generar Marcadores
     tk.Button(frame_buttons, text=" Generar Marcadores.pptx", image=markers_icon, compound="left", padx=8, pady=8,
               command=lambda: ejecutar_marcadores(input_pptx_entry.get(), output_path_entry.get())).pack(side="left", padx=5)
-
-    # Botón Generar Presentación
-    tk.Button(frame_buttons, text=" Generar Presentación", image=play_icon, compound="left", padx=8, pady=8,
-              command=lambda: ejecutar_script(input_pptx_entry.get(), input_excel_entry.get(), output_path_entry.get(), output_file_entry.get())).pack(side="left", padx=5)
-
 
     root.mainloop()
 

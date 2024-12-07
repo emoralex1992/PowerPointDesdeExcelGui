@@ -590,13 +590,12 @@ def ImprimirDiseñosPresentacion(prs):
     print("")
 
 
-# Exportar nombres de placeholders a un archivo PowerPoint (Marcadores.pptx)
-def ExportarNombrePlaceholders():
-    if not INPUT_PPTX_TEMPLATE or not OUTPUT_PATH:
+def ExportarNombrePlaceholders(input_pptx, output_path):
+    if not input_pptx or not output_path:
         raise ValueError("Debe configurar las rutas de entrada y salida antes de exportar marcadores.")
 
     # Crear Presentación
-    prs = Presentation(INPUT_PPTX_TEMPLATE)
+    prs = Presentation(input_pptx)
 
     # Iterar sobre los layouts
     for layout_id, layout in enumerate(prs.slide_layouts):
@@ -616,7 +615,7 @@ def ExportarNombrePlaceholders():
                 pass
 
     # Guardar la presentación
-    marcadores_path = os.path.join(OUTPUT_PATH, "Marcadores.pptx")
+    marcadores_path = os.path.join(output_path, "Marcadores.pptx")
     prs.save(marcadores_path)
     print(f"Marcadores guardados en: {marcadores_path}")
 

@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/PowerPointDesdeExcel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inputs/PlantillaPyCoffee.pptx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Inputs/Presentacion_Cfg_Proyecto.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/marcadores_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/play_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui_config_pptx.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="Added .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui_config_pptx.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui_config_pptx.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +47,10 @@
       <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\assets" />
       <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\Inputs" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel" />
+      <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\temp" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -74,6 +68,28 @@
       <option name="presentableId" value="Default" />
       <updated>1733561946419</updated>
     </task>
+    <task id="LOCAL-00001" summary="Primera versión con interfaz gráfica.">
+      <option name="closed" value="true" />
+      <created>1733572136838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733572136838</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added .gitignore">
+      <option name="closed" value="true" />
+      <created>1733572380718</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733572380718</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Primera versión con interfaz gráfica." />
+    <MESSAGE value="Added .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .gitignore" />
   </component>
 </project>
