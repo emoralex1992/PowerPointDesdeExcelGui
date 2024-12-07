@@ -114,6 +114,44 @@ def ejecutar_marcadores(input_pptx, output_path):
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error: {str(e)}")
 
+def exportar_lista_diseños(input_pptx, output_path):
+    """Exporta una lista de nombres de diseños a un archivo Excel."""
+    if not input_pptx or not output_path:
+        messagebox.showerror("Error", "La plantilla y la carpeta de salida son obligatorias.")
+        return
+
+    if not Path(input_pptx).is_file():
+        messagebox.showerror("Error", f"La plantilla PowerPoint no existe: {input_pptx}")
+        return
+
+    if not Path(output_path).is_dir():
+        messagebox.showerror("Error", f"La carpeta de salida no existe: {output_path}")
+        return
+
+    # Ruta del archivo Excel de salida
+    output_file = Path(output_path) / "Lista_Diseños.xlsx"
+
+    # Verificar si el archivo ya existe
+    if not verificar_sobrescritura(output_file):
+        return
+
+    try:
+        # Llamar a la función del script principal para listar los diseños
+        from main import listar_diseños
+        lista_diseños = listar_diseños(input_pptx)
+
+        # Crear un DataFrame con la lista de diseños
+        import pandas as pd
+        df = pd.DataFrame({"Nombres de Diseños": lista_diseños})
+
+        # Guardar el DataFrame en un archivo Excel
+        df.to_excel(output_file, index=False)
+
+        messagebox.showinfo("Éxito", f"Lista de diseños exportada correctamente en: {output_file}")
+    except Exception as e:
+        messagebox.showerror("Error", f"Ocurrió un error al exportar la lista de diseños: {str(e)}")
+
+
 def main_gui():
     root = tk.Tk()
     root.title("Generador de Presentaciones PowerPoint")
@@ -152,10 +190,16 @@ def main_gui():
     try:
         play_icon = PhotoImage(file=os.path.join(assets_path, "play_icon.png"))
         markers_icon = PhotoImage(file=os.path.join(assets_path, "marcadores_icon.png"))
+        slides_icon = PhotoImage(file=os.path.join(assets_path, "slides_icon.png"))
     except Exception as e:
         messagebox.showerror("Error", f"No se pudieron cargar los iconos: {str(e)}")
         play_icon = None
         markers_icon = None
+        slides_icon = None
+
+    # Botón Generar Lista Diseños
+    tk.Button(frame_buttons, text=" Generar Lista Diseños", image=slides_icon, compound="left", padx=8, pady=8,
+              command=lambda: exportar_lista_diseños(input_pptx_entry.get(), output_path_entry.get())).pack(side="left", padx=5)
 
     # Botón Generar Presentación
     tk.Button(frame_buttons, text=" Generar Presentación", image=play_icon, compound="left", padx=8, pady=8,

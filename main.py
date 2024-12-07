@@ -975,6 +975,15 @@ def guardar_presentacion(prs, output_path, output_file_name):
     prs.save(output_file)
     print(f"La presentación se ha guardado correctamente en: {output_file}")
 
+def listar_diseños(input_pptx):
+    """Devuelve una lista con los nombres de los diseños disponibles en un archivo PowerPoint."""
+    prs = Presentation(input_pptx)
+    nombres_diseños = []
+    for idx, layout in enumerate(prs.slide_master.slide_layouts):
+        nombres_diseños.append(layout.name)
+    return nombres_diseños
+
+
 # Rutina principal
 def main():
     global INPUT_PPTX_TEMPLATE, INPUT_EXCEL_CFG, OUTPUT_PATH, OUTPUT_FILE_NAME
