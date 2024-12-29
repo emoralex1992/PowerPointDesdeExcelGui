@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="Añadido botón para genearar lista de diseños en Excel.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="Últimas modificaciones antes de producción.">
+      <change afterPath="$PROJECT_DIR$/assets/logo_engiacademy.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/logo_engiacademy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/LICENCE-openpyxl.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/LICENSE-matplotlib.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/LICENSE-numpy.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/LICENSE-pandas.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/licenses/LICENSE_python-pptx.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui_config_pptx.py" beforeDir="false" afterPath="$PROJECT_DIR$/PowerPointGenerator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +40,17 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.PowerPointGenerator.executor": "Run",
     "Python.gui_config_pptx.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/eduar/PycharmProjects/PowerPointDesdeExcel",
+    "last_opened_file_path": "C:/Users/eduar/PycharmProjects/PowerPointDesdeExcel/licenses",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\licenses" />
       <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\assets" />
       <recent name="C:\Users\eduar\PycharmProjects\PowerPointDesdeExcel\Inputs" />
     </key>
@@ -98,7 +107,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733576523938</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Últimas modificaciones antes de producción.">
+      <option name="closed" value="true" />
+      <created>1735507099097</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735507099097</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Últimas modificaciones antes de producción.">
+      <option name="closed" value="true" />
+      <created>1735507112295</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735507112295</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -106,6 +131,7 @@
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Código modificado con iconos añadidos." />
     <MESSAGE value="Añadido botón para genearar lista de diseños en Excel." />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadido botón para genearar lista de diseños en Excel." />
+    <MESSAGE value="Últimas modificaciones antes de producción." />
+    <option name="LAST_COMMIT_MESSAGE" value="Últimas modificaciones antes de producción." />
   </component>
 </project>
