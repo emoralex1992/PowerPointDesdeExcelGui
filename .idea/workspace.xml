@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="Código modificado con iconos añadidos.">
+    <list default="true" id="835edd3f-7ed3-4d93-b4b8-4cf2129d00e1" name="Changes" comment="Añadido botón para genearar lista de diseños en Excel.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui_config_pptx.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui_config_pptx.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +36,7 @@
     "Python.gui_config_pptx.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/eduar/PycharmProjects/PowerPointDesdeExcel/assets",
+    "last_opened_file_path": "C:/Users/eduar/PycharmProjects/PowerPointDesdeExcel",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
@@ -92,13 +90,22 @@
       <option name="project" value="LOCAL" />
       <updated>1733574575569</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Añadido botón para genearar lista de diseños en Excel.">
+      <option name="closed" value="true" />
+      <created>1733576523938</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733576523938</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Primera versión con interfaz gráfica." />
     <MESSAGE value="Added .gitignore" />
     <MESSAGE value="Código modificado con iconos añadidos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Código modificado con iconos añadidos." />
+    <MESSAGE value="Añadido botón para genearar lista de diseños en Excel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadido botón para genearar lista de diseños en Excel." />
   </component>
 </project>
