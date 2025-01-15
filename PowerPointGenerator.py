@@ -1,3 +1,6 @@
+# COMANDO PARA REGENERAR EL INSTALADOR:
+# pyinstaller --onefile --windowed --icon="assets/logo_engiacademy.ico" .\PowerPointGenerator.py
+
 import tkinter as tk
 from tkinter import filedialog, messagebox, PhotoImage
 from pathlib import Path
