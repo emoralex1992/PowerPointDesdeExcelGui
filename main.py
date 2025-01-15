@@ -263,7 +263,7 @@ def AñadirImagenPlaceholder(slide, img_path, placeholder, img_param_dict):
         # Únicamente el Alto de la imagen ha sido definido
         elif (img_param_dict['ancho_img_cm'] == None) and (img_param_dict['alto_img_cm'] != None):
             img.width = Cm(img_param_dict['alto_img_cm'] * (img.width / img.height))
-            img.heigh = Cm(img_param_dict['ancho_img_cm'])
+            img.height = Cm(img_param_dict['alto_img_cm'])
 
         # Error: Ni el Alto ni el Ancho de la imagen han sido definidos
         else:
