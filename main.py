@@ -358,9 +358,10 @@ def AñadirTablaPlaceholder(slide, placeholder_idx, elem_params):
     table = table_shape.table
 
     # Añadir estilo a la tabla
-    tbl = table_shape._element.graphic.graphicData.tbl
-    style_id = TABLE_STYLE_ID_DICT[estilo_tabla]
-    tbl[0][-1].text = style_id
+    if(estilo_tabla):
+        tbl = table_shape._element.graphic.graphicData.tbl
+        style_id = TABLE_STYLE_ID_DICT[estilo_tabla]
+        tbl[0][-1].text = style_id
 
     # Añadir valores a la tabla
     for row_idx, row in enumerate(tabla):
