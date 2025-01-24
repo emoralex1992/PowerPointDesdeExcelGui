@@ -732,10 +732,11 @@ def AplicarFormatoAvanzado(valor, formato):
                 valor_formateado = f"{valor_float:,.{decimales}f}".replace(',', sep_miles)
 
             #Formatear el valor según la posición del símbolo
-            if formato['posicion'] == 'f': # Símbolo al final
-                return f"{valor_formateado}{formato['simbolo']}{texto_formato}"
-            elif formato['posicion'] == 'i': # Símbolo al inicio
-                return f"{formato['simbolo']}{valor_formateado}{texto_formato}"
+            if 'posicion' in formato:
+                if formato['posicion'] == 'f': # Símbolo al final
+                    return f"{valor_formateado}{formato['simbolo']}{texto_formato}"
+                elif formato['posicion'] == 'i': # Símbolo al inicio
+                    return f"{formato['simbolo']}{valor_formateado}{texto_formato}"
 
             return valor_formateado
 
